@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SQLite;
+using ContactsApp.Classes;
 
 namespace ContactsApp
 {
@@ -23,12 +25,34 @@ namespace ContactsApp
         public MainWindow()
         {
             InitializeComponent();
+            readDatabase();
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             AddContactWIndow newContactWindow = new AddContactWIndow();
             newContactWindow.ShowDialog();
+            readDatabase();
+        }
+
+        public void readDatabase()
+        {
+            List<Contact> contact;
+            using (SQLiteConnection conn = new SQLiteConnection(App.dbpath))
+            {
+                conn.CreateTable<Contact>();
+                contact = conn.Table<Contact>().ToList();
+            }
+            if (contact != null)
+            {
+                foreach (var c in contact)
+                {
+                    contentListItem.Items.Add(new ListViewItem()
+                    {
+                        Content = c
+                    });
+                }
+            }
         }
     }
 }
