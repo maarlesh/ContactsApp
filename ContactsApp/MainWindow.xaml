@@ -12,7 +12,7 @@
                 Content="Add a Contact" 
                 FontSize="25" 
                 Margin="2 2 2 2"
-                Click="saveButton_Click"/>
+                Click="addButton_Click"/>
         </StackPanel>
 
     </Grid>

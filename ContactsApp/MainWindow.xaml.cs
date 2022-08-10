@@ -25,7 +25,7 @@ namespace ContactsApp
             InitializeComponent();
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        private void addButton_Click(object sender, RoutedEventArgs e)
         {
             AddContactWIndow newContactWindow = new AddContactWIndow();
             newContactWindow.ShowDialog();

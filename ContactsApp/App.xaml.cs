@@ -13,8 +13,9 @@ namespace ContactsApp
     /// </summary>
     public partial class App : Application
     {
-        public static string dbname = "Contacts.db";
+        /*public static string dbname = "Contacts.db";
         public static string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        public static string dbpath = System.IO.Path.Combine(path, dbname);
+        public static string dbpath = System.IO.Path.Combine(path, dbname);*/
+        public static string dbpath = "E:/Courses/Windows Presentation Foundation/ContactsApp/Databases/Contacts.db";
     }
 }

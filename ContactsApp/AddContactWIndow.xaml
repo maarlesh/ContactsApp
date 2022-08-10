@@ -14,7 +14,7 @@
             <TextBox x:Name="emailTextBox"></TextBox>
             <Label Content="Phone no" Margin="5 5 5 5"></Label>
             <TextBox x:Name="phnoTextBox"></TextBox>
-            <Button Margin="5 40 5 0" Content="Save contact">
+            <Button Margin="5 40 5 0" Content="Save contact" Click="saveButton_Click">
             </Button>
         </StackPanel>
         
