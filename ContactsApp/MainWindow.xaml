@@ -14,7 +14,21 @@
                 Margin="2 2 2 2"
                 Click="addButton_Click"/>
                 <ListView x:Name="contentListItem">
-                    
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontSize="20">
+                                
+                            </TextBlock>
+                            <TextBlock Text="{Binding Email}" FontSize="15" Foreground="Blue">
+                                
+                            </TextBlock>
+                            <TextBlock Text="{Binding Phone}" FontSize="13">
+                                
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
                 </ListView>
         </StackPanel>
         

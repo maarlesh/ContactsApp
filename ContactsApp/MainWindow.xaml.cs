@@ -45,13 +45,7 @@ namespace ContactsApp
             }
             if (contact != null)
             {
-                foreach (var c in contact)
-                {
-                    contentListItem.Items.Add(new ListViewItem()
-                    {
-                        Content = c
-                    });
-                }
+                contentListItem.ItemsSource = contact;
             }
         }
     }
