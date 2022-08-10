@@ -13,7 +13,11 @@
                 FontSize="25" 
                 Margin="2 2 2 2"
                 Click="addButton_Click"/>
-                <ListView x:Name="contentListItem">
+            <TextBox Margin="5 10 5 5" 
+                     FontSize="20"
+                     TextChanged="TextBox_TextChanged">
+            </TextBox>
+            <ListView x:Name="contentListItem">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

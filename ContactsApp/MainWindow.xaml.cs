@@ -22,8 +22,10 @@ namespace ContactsApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Contact> contact;
         public MainWindow()
         {
+            contact = new List<Contact>();
             InitializeComponent();
             readDatabase();
         }
@@ -37,7 +39,6 @@ namespace ContactsApp
 
         public void readDatabase()
         {
-            List<Contact> contact;
             using (SQLiteConnection conn = new SQLiteConnection(App.dbpath))
             {
                 conn.CreateTable<Contact>();
@@ -47,6 +48,15 @@ namespace ContactsApp
             {
                 contentListItem.ItemsSource = contact;
             }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox filter = (TextBox)sender;
+
+            var filteredContact = contact.Where(c => c.Name.ToUpper().Contains(filter.Text.ToUpper())).ToList();
+
+            contentListItem.ItemsSource = filteredContact;
         }
     }
 }
