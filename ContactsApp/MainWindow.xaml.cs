@@ -42,7 +42,7 @@ namespace ContactsApp
             using (SQLiteConnection conn = new SQLiteConnection(App.dbpath))
             {
                 conn.CreateTable<Contact>();
-                contact = conn.Table<Contact>().ToList();
+                contact = (conn.Table<Contact>().ToList()).OrderBy(c => c.Name).ToList();
             }
             if (contact != null)
             {
