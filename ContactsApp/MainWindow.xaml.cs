@@ -58,5 +58,15 @@ namespace ContactsApp
 
             contentListItem.ItemsSource = filteredContact;
         }
+
+        private void contentListItem_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Contact contact = contentListItem.SelectedItem as Contact;
+            if( contact != null)
+            {
+                SelectionWIndow selectionWIndow = new SelectionWIndow(contact);
+                selectionWIndow.ShowDialog();
+            }
+        }
     }
 }

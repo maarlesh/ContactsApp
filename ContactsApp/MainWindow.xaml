@@ -17,7 +17,8 @@
                      FontSize="20"
                      TextChanged="TextBox_TextChanged">
             </TextBox>
-            <ListView x:Name="contentListItem">
+            <ListView x:Name="contentListItem"
+                      SelectionChanged="contentListItem_SelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
