@@ -66,6 +66,7 @@ namespace ContactsApp
             {
                 SelectionWIndow selectionWIndow = new SelectionWIndow(contact);
                 selectionWIndow.ShowDialog();
+                readDatabase();
             }
         }
     }
